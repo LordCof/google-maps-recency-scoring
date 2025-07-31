@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Google Maps Recent Score",
+  "version": "1.0",
+  "description": "Affiche un score basé sur les reviews récentes",
+  
+  "permissions": [
+    "activeTab"
+  ],
+  
+  "host_permissions": [
+    "https://www.google.com/*",
+    "https://maps.google.com/*"
+  ],
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/maps/*",
+        "https://maps.google.com/*"
+      ],
+      "js": ["scraper.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ]
+}

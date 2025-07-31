@@ -1,0 +1,420 @@
+/* Styles pour l'affichage du score pondéré */
+.weighted-score-display {
+    margin: 16px auto 12px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.weighted-score-container {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+    position: relative;
+}
+
+.weighted-score-title {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.weighted-score-value {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.weighted-score-info {
+    font-size: 11px;
+    opacity: 0.8;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.score-reset-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.score-reset-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* États de chargement et d'erreur */
+.weighted-score-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+    font-size: 16px;
+}
+
+.loading-text {
+    font-weight: 400;
+}
+
+.weighted-score-error {
+    font-size: 13px;
+    opacity: 0.9;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.error-reset-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.weighted-score-container.loading {
+    background: linear-gradient(135deg, #757575 0%, #9e9e9e 100%);
+}
+
+.weighted-score-container.error {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.weighted-score-container:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+/* Styles pour l'interface de scoring */
+.scoring-button-container {
+    margin: 16px auto 12px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.scoring-interface {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 16px;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+
+.scoring-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a73e8;
+}
+
+.scoring-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scoring-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scoring-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.scoring-btn.custom {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.custom-input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.custom-input input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.custom-input button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Animation d'apparition */
+.weighted-score-display, .scoring-button-container {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style alternatif pour mode sombre */
+@media (prefers-color-scheme: dark) {
+    .scoring-interface {
+        background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        color: #e2e8f0;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .scoring-title {
+        color: #63b3ed;
+    }
+    
+    .custom-input input {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .weighted-score-container {
+        background: linear-gradient(135deg, #1a73e8 0%, #137333 100%);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .weighted-score-container.loading {
+        background: linear-gradient(135deg, #424242 0%, #616161 100%);
+    }
+    
+    .weighted-score-container.error {
+        background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+    }
+}
+
+/* Style responsive pour mobile */
+@media (max-width: 768px) {
+    .weighted-score-container, .scoring-interface {
+        max-width: 280px;
+        padding: 14px;
+    }
+    
+    .weighted-score-value {
+        font-size: 22px;
+    }
+    
+    .scoring-options {
+        gap: 6px;
+    }
+    
+    .scoring-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .score-reset-btn, .error-reset-btn {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+}/* Styles pour l'affichage du score pondéré */
+.weighted-score-display {
+    margin: 16px auto 12px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.weighted-score-container {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+}
+
+.weighted-score-title {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.weighted-score-value {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.weighted-score-info {
+    font-size: 11px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* États de chargement et d'erreur */
+.weighted-score-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+    font-size: 16px;
+}
+
+.loading-text {
+    font-weight: 400;
+}
+
+.weighted-score-error {
+    font-size: 13px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.weighted-score-container.loading {
+    background: linear-gradient(135deg, #757575 0%, #9e9e9e 100%);
+}
+
+.weighted-score-container.error {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.weighted-score-container:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+/* Animation d'apparition */
+.weighted-score-display {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style alternatif pour mode sombre */
+@media (prefers-color-scheme: dark) {
+    .weighted-score-container {
+        background: linear-gradient(135deg, #1a73e8 0%, #137333 100%);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .weighted-score-container.loading {
+        background: linear-gradient(135deg, #424242 0%, #616161 100%);
+    }
+    
+    .weighted-score-container.error {
+        background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+    }
+}
+
+/* Style responsive pour mobile */
+@media (max-width: 768px) {
+    .weighted-score-container {
+        max-width: 280px;
+        padding: 14px;
+    }
+    
+    .weighted-score-value {
+        font-size: 22px;
+    }
+}
