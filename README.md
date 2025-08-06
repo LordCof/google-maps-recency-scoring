@@ -2,7 +2,7 @@
 
 A Chrome extension that displays a recency weighted score for Google Maps.
 
-## Reasonning
+## Reasoning
 
 This extension analyzes Google Maps reviews and calculates a weighted score that gives more importance to recent reviews:
 
