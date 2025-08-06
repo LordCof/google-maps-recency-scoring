@@ -6,11 +6,12 @@ A Chrome extension that displays a recency weighted score for Google Maps.
 
 This extension analyzes Google Maps reviews and calculates a weighted score that gives more importance to recent reviews:
 
-- **Last month**: 100% weight
-- **1-3 months**: 80% weight  
-- **3-6 months**: 50% weight
-- **6-12 months**: 20% weight
-- **Over 1 year**: 5% weight
+- **Last two months**: 100% weight
+- **2-6 months**: 70% weight  
+- **6-12 months**: 50% weight
+- **1-2 years**: 30% weight
+- **2-5 years**: 10% weight
+- **Over 5 year**: 0
 
 The weighted score appears next to the official Google Maps rating.
 
